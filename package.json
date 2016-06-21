@@ -1,0 +1,10 @@
+{
+  "name": "berlin-nodejs-meetup-cote",
+  "version": "1.0.0",
+  "description": "Examples for the talk 'Implementing Microservices With Cote'",
+  "author": "Armagan Amcalar <armagan@amcalar.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cote": "latest"
+  }
+}

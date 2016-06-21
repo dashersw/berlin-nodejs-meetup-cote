@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello! This is an example for cote!</h1>
+
+<p>Open the developer tools, and you will see the messages logged to the console.</p>
+<p>Navigate to the websockets pane and watch the raw communication with the server.</p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect();
+    var id = 0;
+
+    setInterval(function() {
+        var req = {
+            id: id++
+        };
+
+        socket.emit('time', req, function(data) {
+            console.log('response', req.id, data);
+        });
+    }, 1000);
+
+    socket.on('timex', function(data) {
+        console.log('timex!', data);
+    });
+</script>
+
+</body>
+</html>
